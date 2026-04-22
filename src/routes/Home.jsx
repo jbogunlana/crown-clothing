@@ -29,7 +29,11 @@ function Home() {
     },
   ];
 
-  return <Directory categories={categories} />;
+  return (
+    <div>
+      <Directory categories={categories} />
+    </div>
+  );
 }
 
 export default Home;
