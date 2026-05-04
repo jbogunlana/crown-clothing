@@ -18,7 +18,6 @@ const defaultFieldForm = {
 function SignInForm() {
   const [formField, setFormField] = useState(defaultFieldForm);
   const { email, password } = formField;
-  // console.log(formField);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,11 +29,11 @@ function SignInForm() {
     e.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword({
+      const { user } = await signInAuthUserWithEmailAndPassword({
         email,
         password,
       });
-      console.log(response);
+
       setFormField(defaultFieldForm);
     } catch (error) {
       if (error.code === "auth/invalid-credential") {
@@ -46,8 +45,7 @@ function SignInForm() {
   };
 
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   return (
