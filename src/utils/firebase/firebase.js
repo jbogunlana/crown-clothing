@@ -35,7 +35,7 @@ const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
 // connection to firebase documents
-export const db = getFirestore();
+const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (
   userAuth,
