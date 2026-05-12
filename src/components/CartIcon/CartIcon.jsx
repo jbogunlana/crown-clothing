@@ -5,7 +5,7 @@ import { CartContext } from "../../contexts/CartContext";
 import { getMultiFactorResolver } from "firebase/auth";
 
 function CartIcon() {
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const { isCartOpen, setIsCartOpen, cartCount } = useContext(CartContext);
 
   const toogleIsCartOpen = (e) => {
     // if (isCartOpen === false) return setIsCartOpen(true);
@@ -20,7 +20,7 @@ function CartIcon() {
         alt="Shopping Bag logo"
         className="shopping-icon"
       />
-      <span className="item-count">0</span>
+      <span className="item-count">{cartCount}</span>
     </div>
   );
 }
