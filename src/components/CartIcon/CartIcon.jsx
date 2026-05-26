@@ -1,8 +1,12 @@
-import "../../scss/CartIcon.scss";
 import ShoppingBag from "../../assets/shopping-bag.svg";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartContext";
-import { getMultiFactorResolver } from "firebase/auth";
+
+import {
+  ShoppingIcon,
+  CartIconContainer,
+  ItemCount,
+} from "../../styles/CartIcon.js";
 
 function CartIcon() {
   const { isCartOpen, setIsCartOpen, cartCount } = useContext(CartContext);
@@ -14,14 +18,10 @@ function CartIcon() {
   };
 
   return (
-    <div className="cart-icon-container" onClick={toogleIsCartOpen}>
-      <img
-        src={ShoppingBag}
-        alt="Shopping Bag logo"
-        className="shopping-icon"
-      />
-      <span className="item-count">{cartCount}</span>
-    </div>
+    <CartIconContainer onClick={toogleIsCartOpen}>
+      <img src={ShoppingBag} alt="Shopping Bag logo" ShoppingIcon />
+      <ItemCount>{cartCount}</ItemCount>
+    </CartIconContainer>
   );
 }
 
