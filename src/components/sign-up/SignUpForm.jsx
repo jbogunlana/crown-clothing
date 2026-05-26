@@ -4,7 +4,7 @@ import {
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase";
 
-import FormInput from "../form-input/formInput";
+import FormInput from "../form-input/FormInput";
 import { SignUpcontainer } from "../../styles/SignUpForm";
 import Button from "../button/Button";
 

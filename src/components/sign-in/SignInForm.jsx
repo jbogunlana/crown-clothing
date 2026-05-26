@@ -5,7 +5,7 @@ import {
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase/firebase";
 
-import FormInput from "../form-input/formInput";
+import FormInput from "../form-input/FormInput";
 import { SignInContainer, ButtonContainer } from "../../styles/SignInForm";
 import Button from "../button/Button";
 import { BUTTON_TYPE_CLASSES } from "../button/Button";
